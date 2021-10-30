@@ -1,8 +1,5 @@
 package task2;
 
-import org.w3c.dom.ls.LSOutput;
-import task1.Main_task1;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -12,7 +9,6 @@ import java.util.Scanner;
 
 public class Client {
     private static final String COLOR = Main_task2.CLIENT_COLOR;
-    private static final int WORK_DELAY = 2_000;
 
     public static void start() {
         System.out.println(COLOR + "Клиент запускается...");
