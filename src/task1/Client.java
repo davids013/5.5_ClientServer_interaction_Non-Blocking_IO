@@ -18,17 +18,15 @@ public class Client {
             String request;
             Thread.sleep(1); // Костыль для правильной очередности печати в консоль
             while (true) {
-                System.out.print(COLOR +
-                        "Введите номер элемента последовательности Фибоначчи (`end` для выхода):\n>> ");
+                System.out.print(COLOR + "Введите номер элемента последовательности Фибоначчи:\n>> ");
                 request = sc.nextLine();
-                if ("end".equalsIgnoreCase(request.trim()) || "утв".equalsIgnoreCase(request.trim()))
-                    break;
                 try {
                     int num = Integer.parseInt(request.replaceAll("[&&[^0-9]]", ""));
-                    if (num > 0 && num <= 400_000) {
+                    if (num > 0 && num <= 500_000) {
                         System.out.println(COLOR + "Клиент отправляет запрос: " + num);
                         out.println(num);
                         System.out.println(COLOR + "Ответ сервера получен: " + in.readLine());
+                        break;
                     } else System.out.println(COLOR + "\tYou really don't want to do that...");
                 } catch (NumberFormatException | IOException e) {
                     System.out.println(COLOR + "Некорректный ввод");
