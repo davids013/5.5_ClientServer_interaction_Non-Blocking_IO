@@ -29,8 +29,6 @@ public class Client {
                     break;
                 System.out.println(COLOR + "Клиент отсылает запрос: " + request);
                 socketChannel.write(ByteBuffer.wrap(request.getBytes(StandardCharsets.UTF_8)));
-//                System.out.println(COLOR + "Клиент занимается своими делами...");
-//                Thread.sleep(WORK_DELAY);
                 int bytesCount = socketChannel.read(inputBuffer);
                 System.out.println(COLOR + "Ответ сервера получен: " +
                         new String(inputBuffer.array(), 0, bytesCount, StandardCharsets.UTF_8).trim());
